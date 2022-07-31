@@ -29,6 +29,24 @@ stage('Install Dependencies') {
         sh 'npm test'
       }
     }
+    repositories {
+  mavenCentral()
+}
+
+dependencies {
+  // your dependencies
+}
+
+sourceSets {
+  main {
+    java {
+      srcDirs = ['src/main/java']
+    }
+    resources {
+      srcDirs = ['src/main/resources']
+    }
+  }
+}
     stage('Deploy Application') {
       steps {
                withCredentials([usernameColonPassword(credentialsId: 'heroku_jenkins', variable: 'HEROKU_CREDENTIALS' )]){
