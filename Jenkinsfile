@@ -24,10 +24,6 @@ stage('Install Dependencies') {
         sh 'npm install'
       }
     }
-    stage('Tests') {
-      steps { 
-        sh 'npm
-		
 		stage('Tests') {
       steps { 
         sh 'npm test'
